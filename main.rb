@@ -7,8 +7,8 @@ def merge_sort(an_ary)
   rhs = rhs.size > 1 ? merge_sort(rhs) : rhs
 
   new_ary = []
-  until lhs.size == 0 || rhs.size == 0
-    lhs[0] > rhs[0] ? new_ary.push(rhs.slice!(0)) : new_ary.push(lhs.slice!(0))
+  until lhs.empty? || rhs.empty?
+    lhs[0] > rhs[0] ? new_ary.push(rhs.shift) : new_ary.push(lhs.shift)
   end
   new_ary = new_ary + lhs + rhs
   return new_ary
